@@ -1,55 +1,24 @@
-const data = [
-    {
-        location: "London",
-        latitude: 51.5073219,
-        longitude: -0.1276474,
-    },
-    {
-        location: "Kolkata",
-        latitude: 22.5726723,
-        longitude: 88.3638815,
-    },
-    {
-        location: "Dhaka",
-        latitude: 23.777176,
-        longitude: 90.399452,
-    },
-    {
-        location: "Singapore",
-        latitude: 1.2899175,
-        longitude: 103.8519072,
-    },
-    {
-        location: "New York",
-        latitude: 40.7127281,
-        longitude: -74.0060152,
-    },
-    {
-        location: "Toronto",
-        latitude: 43.6534817,
-        longitude: -79.3839347,
-    },
-];
 
-function getLocations() {
-    return data;
-}
+const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
-function getLocationByName(location) {
-    if (!location) return null;
+async function getLocationByName(location) {
+  if (!location) return null;
 
-    const filtered = data.filter((item) => item.location === location);
-
-    if (filtered.length > 0) {
-        return filtered[0];
+  try {
+    const response = await fetch(
+      `https://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=5&appid=${API_KEY}`
+    );
+    const data = await response.json();
+    
+    if (data.length > 0) {
+      return data[0]; // Assuming the first result is the most relevant
     } else {
-        const defaultLocation = {
-            location: "",
-            latitude: 0,
-            longitude: 0,
-        };
-        return defaultLocation;
+      return null;
     }
+  } catch (error) {
+    console.error("Error fetching location:", error);
+    return null;
+  }
 }
 
-export { getLocationByName, getLocations };
+export { getLocationByName };

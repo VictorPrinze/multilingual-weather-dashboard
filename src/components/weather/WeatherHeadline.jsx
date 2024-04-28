@@ -51,7 +51,7 @@ function WeatherHeadline() {
 
   return (
     <div>
-      <div className="max-md:flex items-center justify-between md:-mt-10">
+      <div className="max-md:flex items-center justify-between md:-mt-1">
         <img src={getWeatherIcon(climate)} alt="climate" />
         <div className="max-md:flex items-center max-md:space-x-4">
           <h1 className="text-[60px] lg:text-[80px] xl:text-[100px] leading-none md:mb-4">
@@ -63,7 +63,7 @@ function WeatherHeadline() {
           </div>
         </div>
       </div>
-      <p className="text-sm lg:text-lg">{formattedDate}</p>
+      <p className="text-sm lg:text-lg  ">{formattedDate}</p>
     </div>
   );
 }
