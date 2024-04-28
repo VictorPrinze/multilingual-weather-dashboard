@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { WeatherContext } from "../../context";
 import CloudyIcon from "../../assets/icons/cloud.svg";
 import HumidityIcon from "../../assets/icons/humidity.svg";
@@ -22,7 +22,7 @@ function WeatherCondition() {
   return (
     <div>
       <p className="text-sm lg:text-lg font-bold uppercase mb-8">
-        {t("climate.is")} <u>{climate}</u>
+        {t("climate.is")} <u>{t(`climate.${climate.toLowerCase()}`)}</u>
       </p>
       <ul className="space-y-6 lg:space-y-6">
         <li className="text-sm lg:text-lg flex items-center justify-between space-x-4">
