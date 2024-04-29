@@ -1,13 +1,10 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import Favourite from "./Favourite";
-import FavouriteListModal from "./FavouriteListModal";
 import Logo from "./Logo";
 import Search from "./Search";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 function Header() {
-  const [showFavModal, setShowFavModal] = useState(false);
   const { t } = useTranslation();
 
   return (
@@ -16,8 +13,6 @@ function Header() {
         <Logo />
         <div className="flex items-center gap-4 relative">
           <Search />
-          <Favourite onShow={() => setShowFavModal(!showFavModal)} />
-          {showFavModal && <FavouriteListModal />}
           <LanguageSwitcher />
         </div>
       </nav>

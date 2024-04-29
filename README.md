@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# Multilingual Weather Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This project is a simple weather dashboard built using React and Vite that supports both English and Swahili languages. It fetches weather data from the OpenWeatherMap API and displays it to the user. The application is styled and responsive, providing a seamless user experience across different devices.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Multilingual UI: Toggle between English and Swahili languages using a language switcher.
+- Weather Display: Fetches and displays current weather data for Nairobi from the OpenWeatherMap API.
+- State Management: Utilizes React's Context API to manage weather data and language settings.
+- API Integration: Integrates with the OpenWeatherMap API to retrieve weather information.
+- Styling and Responsiveness: The application is well-styled and responsive, ensuring usability on both mobile and desktop devices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Setup and Initialization
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository: `git clone <repository-url>`
+2. Navigate to the project directory: `cd multilingual-weather-dashboard`
+3. echo     `REACT_APP_OPENWEATHERMAP_API_KEY=your-api-key-here" > .env`
+4. Install dependencies: `npm install`
+5. Start the development server: `npm run dev`
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `npm run build`
+- Use the language switcher at the top of the dashboard to toggle between English and Swahili.
+- View the current weather data displayed on the dashboard, including temperature and weather conditions for Nairobi.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React
+- React-Intl
+- OpenWeatherMap API
+- Vite
+- Bootstrap
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## File Structure
 
-### `npm run eject`
+```
+multilingual-weather-dashboard/
+│
+├── public/
+│   
+├── locales/
+│   ├── en/
+│   └── sw/
+├── src/
+│   ├── components/
+│   │   ├── LanguageSwitcher.js
+│   │   ├── WeatherDashboard.js
+│   │   ├── WeatherDisplay.js
+│   │   └── ...
+│   │
+│   ├── context/
+│   │   ├── LanguageContext.js
+│   │   └── WeatherContext.js
+│   │
+│   ├── assets/
+│   │   ├── icons/
+│   │   │   ├── sunny.svg
+│   │   │   └── ...
+│   │   └── ...
+│   │
+│   ├── App.js
+│   ├── index.js
+│   └── ...
+│
+├── README.md
+├── package.json
+└── ...
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Potential Edge Cases and Errors
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Handling API errors such as network issues or bad responses.
+- Managing state when data is not available or the API returns an error.
+- Ensuring the UI gracefully handles different data states (loading, error, data).
+- Displaying appropriate fallbacks for missing weather data.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Evaluation Criteria
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Code Quality: Use of modern JavaScript and React features.
+- Design Implementation: Creativity and user experience in the design.
+- Problem Solving: Handling edge cases and errors effectively.
+- Documentation: Clear running instructions and explanations.
+- Testing: Implement unit tests for components and state management.
 
-## Learn More
+## Credits
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project was created by [Victor Kariuki](https://github.com/VictorPrinze) 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/license/mit) file for details.
